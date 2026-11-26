@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://linearlead.docs.buildwithfern.com/sitemap.xml
+
+
+
