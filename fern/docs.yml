@@ -38,3 +38,5 @@ navigation:
           - page: Support
             path: docs/pages/support.mdx
             icon: fa-duotone fa-headset
+          - page: Ricette e schemi di impilamento
+            path: ./docs/pages/ricette-e-schemi-di-impilamento.mdx

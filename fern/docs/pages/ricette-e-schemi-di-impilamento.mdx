@@ -1,0 +1,37 @@
+---
+title: Ricette e schemi di impilamento
+slug: docs/get-started/ricette-e-schemi-di-impilamento
+---
+
+# Ricette e schemi di impilamento: il cambio formato è un dato, non un intervento
+
+Chi lavora con un pallettizzatore lo sa: la macchina non cambia prodotto, cambia ricetta. Una ricetta è tutto ciò che serve per un formato: misure e peso del collo, misure del pallet, schema di disposizione sullo strato, numero di strati, posizioni di presa e di deposito, parametri della pinza. Quando la ricetta è fatta bene, il cambio formato è una selezione da pannello e una prima strato guardata con attenzione. Quando è fatta male, è un pomeriggio di aggiustamenti a macchina ferma, e la stessa ricetta sbagliata tornerà a presentare il conto a ogni riordino di quel prodotto.
+
+Questa pagina documenta come trattiamo le ricette come dati di configurazione: cosa contengono, come si nominano, come si verificano e come si esportano. È la parte meno visibile di un fine linea, e quella che decide se i piccoli lotti sono un problema o un lavoro come un altro.
+
+## Anatomia di una ricetta
+
+Una ricetta completa ha cinque blocchi. Il **prodotto**: lunghezza, larghezza, altezza, peso e orientamento dell'etichetta, perché un collo girato di novanta gradi cambia lo schema e a volte anche la presa. Il **pallet**: formato, altezza e tipo, inclusa l'eventuale interfalda e il suo spessore, che entra nel calcolo delle quote di deposito. Lo **schema di strato**: la disposizione dei colli sul piano, scelta tra le famiglie classiche, a colonna, a incastro, a mattone, a girandola, e le loro varianti divise. Lo **schema di pila**: quanti strati, se lo schema si ripete identico o alterna due disposizioni per incastrare meglio il carico, e il limite che ferma la pila, che può essere il numero di colli per unità di carico, la portata del pallet o l'altezza massima ammessa dal magazzino. Infine i **punti di percorso**: presa, deposito per ogni posizione dello schema, e le quote di avvicinamento, perché la geometria dello strato diventa traiettoria solo qui.
+
+La distinzione che conta è tra parametri e punti. I parametri descrivono il problema: colli, pallet, schema. I punti sono la soluzione geometrica per quella macchina e quella cella. Esportare una ricetta tra due macchine uguali ha senso per i parametri; i punti si riverificano sempre, perché basta un nastro più alto di tre centimetri per spostare ogni presa.
+
+## Scegliere lo schema: stabilità contro sfruttamento
+
+Lo schema a colonna, con ogni collo esattamente sopra quello dello strato sotto, sfrutta al massimo la resistenza a compressione del cartone e semplifica i punti, ma non incastra nulla: il carico si affida all'avvolgimento. Lo schema a incastro sacrifica qualche punto percentuale di sfruttamento del piano e compra stabilità laterale vera, quella che si apprezza quando il pallet viaggia. La girandola incastra in tutte le direzioni ed è la scelta tipica per i colli pesanti e regolari. Non esiste lo schema migliore: esiste quello giusto per quel collo, quel cartone e quel trasporto, come mostrano [le tabelle degli schemi di impilamento](https://blog.robotiq.com/palletizing-pallet-pattern-charts) che confrontano le famiglie principali. La ricetta deve registrare anche il perché della scelta, in una nota: a distanza di un anno, chi modifica lo schema deve sapere se quella disposizione serviva alla stabilità o a far entrare un collo in più.
+
+Anche lo sbalzo è un dato della ricetta, non un'opinione del momento: se il cliente accetta due centimetri di sporgenza per strato, si scrive; se non li accetta, lo schema che li produce non si salva nemmeno in bozza.
+
+## Nomi, versioni, verifiche
+
+Le ricette invecchiano male quando nessuno le governa. Tre abitudini tengono l'archivio utilizzabile. La prima è il **nome parlante**: prodotto e formato nel nome, per esempio «Fusto 20 L — chimico», così chi è al turno trova la ricetta senza chiedere. La seconda è la **versione**: ogni modifica a uno schema già andato in produzione crea una versione nuova, non sovrascrive quella vecchia, perché il pallet fatto il mese scorso con la versione precedente deve restare spiegabile. La terza è la **verifica del primo strato**: a ogni richiamo di ricetta dopo una modifica, si guarda uno strato intero prima di lasciare la macchina in automatico. È il controllo più economico che esista e quello che viene saltato più spesso.
+
+C'è poi la pulizia periodica: le ricette dei prodotti dismessi si archiviano fuori dall'elenco di produzione. Un archivio con trecento ricette di cui quaranta attive rallenta ogni cambio e aumenta la probabilità di richiamare quella sbagliata.
+
+## Perché ne parliamo in una documentazione
+
+Perché il cambio formato è il punto in cui le promesse commerciali si misurano. Dire «cambio in cinque minuti» non significa nulla senza dire cosa contiene una ricetta e chi la governa. Per chi sta valutando la macchina, [il pallettizzatore cartesiano e il cambio formato per piccoli lotti](https://assilineari.it/prodotti/pallettizzatore/) è il banco di prova concreto: lotti corti e formati numerosi sono il caso in cui la qualità delle ricette vale quanto la velocità degli assi.
+
+La regola con cui chiudiamo ogni messa in servizio è semplice: nessuna ricetta entra in produzione senza nome, versione e una nota sul perché dello schema. Sembra burocrazia. È la differenza tra una macchina che cambia formato e una che cambia umore.
+
+<img src="https://files.buildwithfern.com/visual-editor-images/linearlead.docs.buildwithfern.com/2026-11-26T13:26:20.376Z/docs/get-started/ricette-e-schemi-di-impilamento/Linea-di-pallettizzazione-fusti.jpg" alt="Linea di pallettizzazione di fusti: ogni formato ha la sua ricetta, con schema di strato, numero di strati e posizioni di deposito" title="Linea-di-pallettizzazione-fusti" />
+
