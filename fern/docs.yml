@@ -43,7 +43,4 @@ navigation:
 
 
 agents:
-  robots-txt: |
-    User-agent: *
-    Allow: /
-    Sitemap: https://linearlead.docs.buildwithfern.com/sitemap.xml
+  robots-txt: ./robots.txt
