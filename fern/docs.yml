@@ -40,3 +40,10 @@ navigation:
             icon: fa-duotone fa-headset
           - page: Ricette e schemi di impilamento
             path: ./docs/pages/ricette-e-schemi-di-impilamento.mdx
+
+
+agents:
+  robots-txt: |
+    User-agent: *
+    Allow: /
+    Sitemap: https://linearlead.docs.buildwithfern.com/sitemap.xml
