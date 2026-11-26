@@ -1,0 +1,53 @@
+---
+title: Set up navigation
+slug: navigation
+---
+
+# Set up navigation
+
+The `docs.yml` file configures your whole documentation site, from visual styling to navigation. Navigation covers the tabs, sections, and pages that make up your site's structure. These settings determine what readers see in the sidebar and top bar, and how they move between pages.
+
+## Quick example
+
+Here's a minimal example showing navigation structure in `docs.yml`:
+
+**`docs.yml`**
+
+```yaml title="docs.yml"
+navigation:
+  - section: Getting started
+    contents:
+      - page: Introduction
+        path: docs/pages/intro.mdx
+      - page: Quickstart
+        path: docs/pages/quickstart.mdx
+  - api: API Reference
+```
+
+## Complete navigation options
+
+Explore the navigation options below and click through to the Fern documentation for detailed configuration guides.
+
+#### [Sections and pages](https://buildwithfern.com/learn/docs/configuration/navigation#sections-contents-pages-and-folders)
+
+Organize content into sections with pages and folders
+
+#### [Tabs](https://buildwithfern.com/learn/docs/configuration/tabs)
+
+Create top-level navigation groups
+
+#### [Versions](https://buildwithfern.com/learn/docs/configuration/versions)
+
+Add version switching for your documentation
+
+#### [Products](https://buildwithfern.com/learn/docs/configuration/products)
+
+Support multiple products in one site
+
+#### [API reference](https://buildwithfern.com/learn/docs/api-references/generate-api-ref)
+
+Auto-generate API documentation from your spec
+
+#### [Changelogs](https://buildwithfern.com/learn/docs/configuration/changelogs)
+
+Add a changelog section to your docs
